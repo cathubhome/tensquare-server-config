@@ -1,0 +1,39 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: tensquare-manager
+eureka:
+  client:
+    serviceUrl: #Eureka客户端与Eureka服务端进行交互的地址
+      defaultZone: http://127.0.0.1:6868/eureka/
+jwt:
+  config:
+     key: itcast
+zuul:
+  routes:
+    tensquare-base: #基础
+      path: /base/**
+      serviceId: tensquare-base
+    tensquare-user: #用户
+          path: /user/**
+          serviceId: tensquare-user
+    tensquare-qa:  #问题
+          path: /qa/**
+          serviceId: tensquare-qa
+    tensquare-gathering: #活动
+          path: /gathering/** 
+          serviceId: tensquare‐gathering 
+    tensquare-article: #文章
+          path: /article/** 
+          serviceId: tensquare‐article 
+    tensquare-friend: #交友
+          path: /friend/** 
+          serviceId: tensquare‐friend 
+    tensquare-recruit: #招聘
+          path: /recruit/** 
+          serviceId: tensquare‐recruit 
+    tensquare-spit: #吐槽
+          path: /spit/** 
+          serviceId: tensquare‐spit
+

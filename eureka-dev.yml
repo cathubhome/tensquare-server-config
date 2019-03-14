@@ -1,9 +1,9 @@
 server:
-  port: 6868
+  port: ${serverPort:6868}
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://127.0.0.1:${server.port}/eureka/
+      defaultZone: ${defaultZone:http://192.168.17.18:${server.port}/eureka/}
 
